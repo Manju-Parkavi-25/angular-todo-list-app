@@ -1,0 +1,61 @@
+<div class="todo-container">
+  <h2>To-Do List</h2>
+
+  <!-- Add Task -->
+  <div class="input-section">
+    <!-- Two-way data binding with ngModel (Attribute Directive) to capture user input -->
+    <input type="text" [(ngModel)]="newTask" placeholder="Enter a task" />
+
+    <!-- Event binding (Attribute Directive) to call addTask() when the button is clicked -->
+    <button (click)="addTask()">Add Task</button>
+  </div>
+
+  <!-- *ngIf (Structural Directive) to conditionally show message when no tasks are available -->
+  <p *ngIf="tasks.length === 0" class="no-task-message">
+    No tasks available. Add a new task!
+  </p>
+
+  <!-- Task List -->
+  <ul>
+    <!-- *ngFor (Structural Directive) to loop through tasks and display them dynamically -->
+    <!-- Property binding to conditionally apply 'completed' CSS class based on task status -->
+    <li *ngFor="let task of tasks; let i = index" [class.completed]="task.completed">
+
+      <!-- Event binding (Attribute Directive) to toggle task completion -->
+      <span (click)="toggleTaskCompletion(i)">{{ task.name }}</span>
+
+      <!-- Event binding (Attribute Directive) to delete a task -->
+      <button (click)="deleteTask(i)">Delete</button>
+    </li>
+  </ul>
+
+
+  <!-- Button to Open Summary Modal -->
+  <button (click)="openSummaryModal()" class="open-summary-btn">What I Learned</button>
+
+  <!-- Modal for Summary -->
+  <div class="modal" [class.show]="isModalOpen">
+    <div class="modal-content">
+      <span (click)="closeSummaryModal()" class="close-btn">&times;</span>
+      <h2>What You Learned in Angular</h2>
+      <ul>
+        <li><strong>Two-Way Data Binding:</strong> Used <code>[(ngModel)]</code> for seamless interaction between the UI
+          and component, updating the input value in real-time.</li>
+        <li><strong>Event Binding:</strong> Event binding with <code>(click)</code> was used for actions like adding,
+          completing, and deleting tasks.</li>
+        <li><strong>Structural Directives:</strong> Used <code>*ngIf</code> to show a message when no tasks are
+          available and <code>*ngFor</code> to loop through and display tasks dynamically.</li>
+        <li><strong>Component Communication:</strong> Defined a standalone component with <code>"&#64;"Component</code> to
+          handle logic and UI for the To-Do list.</li>
+        <li><strong>Local Storage:</strong> Used local storage to persist tasks between browser sessions, ensuring tasks
+          remain even after a page refresh.</li>
+        <li><strong>CSS Styling:</strong> Applied professional, minimalistic CSS for a clean, responsive UI, with hover
+          effects and task completion indicators.</li>
+        <li><strong>CLI Commands:</strong> Used Angular CLI commands like <code>ng new</code>,
+          <code>ng generate component</code>, and <code>ng serve</code> to simplify app setup and development.</li>
+        <li><strong>Best Practices:</strong> Followed Angular best practices such as component organization, built-in
+          directives, and state management to create an interactive app.</li>
+      </ul>
+    </div>
+  </div>
+</div>

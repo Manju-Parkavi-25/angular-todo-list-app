@@ -1,59 +1,87 @@
-# TodoListApp
+# To-Do List Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.1.
+A simple and clean Angular-based To-Do list application that allows users to add, toggle, and delete tasks. Data is saved using local storage to maintain state even after page reloads.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Add new tasks
+- Mark tasks as completed (strikethrough effect)
+- Delete tasks
+- Data stored in Local Storage for persistence
 
-```bash
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/todo-app.git
+
+	2.	Navigate to the project directory:
+
+cd todo-app
+
+
+	3.	Install dependencies:
+
+npm install
+
+
+	4.	Run the application:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+	5.	Open your browser and go to:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+http://localhost:4200/
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+	6.	The application should now be running!
 
-```bash
-ng generate --help
-```
+Technologies Used
+	•	Angular 19
+	•	TypeScript
+	•	HTML/CSS
+	•	LocalStorage (for data persistence)
+	•	Angular CLI
 
-## Building
+Summary of What You Learned in Angular
 
-To build the project run:
+Through the development of the To-Do List application, you gained valuable hands-on experience in Angular with the following concepts:
+	1.	Component-Based Architecture:
+	•	Used @Component decorator to define components and create a standalone component for managing the To-Do List.
+	•	Leveraged the component’s selector, template, and styles for clear separation of concerns.
+	2.	Data Binding:
+	•	Two-way Binding ([(ngModel)]) for managing user input in the form.
+	•	Interpolation ({{ }}) to display dynamic content.
+	•	Property Binding ([class.completed]) to conditionally apply classes.
+	•	Event Binding ((click)) for handling user actions like adding, toggling, and deleting tasks.
+	3.	Directives:
+	•	Structural Directives like *ngIf (conditional rendering) and *ngFor (iteration) to handle dynamic display of tasks and messages.
+	•	Attribute Directive (ngModel) for managing form inputs.
+	4.	Local Storage Integration:
+	•	Implemented local storage to persist tasks even after the browser page is reloaded. This allows tasks to be saved and restored automatically.
+	5.	Component Styling:
+	•	Applied custom styles using an external CSS file to enhance the appearance of the application.
+	•	Used dynamic styling techniques, such as applying a line-through effect on completed tasks using CSS classes.
+	6.	Angular CLI:
+	•	Used Angular CLI commands for component generation, project setup, and app running.
 
-```bash
-ng build
-```
+Contributing
+	1.	Fork the repository
+	2.	Create your feature branch (git checkout -b feature-name)
+	3.	Commit your changes (git commit -m 'Add some feature')
+	4.	Push to the branch (git push origin feature-name)
+	5.	Open a Pull Request
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+License
 
-## Running unit tests
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Acknowledgements
+	•	Inspired by various to-do list applications available on the web.
+	•	Thanks to the Angular community for creating such an amazing framework!
 
-```bash
-ng test
-```
+### *Where to Keep This Summary in the Application*:
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- *README File*: The summary is included in the README.md file, which is the most common place for project overviews and learning outcomes.
+- *UI (Optional)*: You can create an "About" or "What You Learned" page or modal within the app itself, where users can read the summary.
